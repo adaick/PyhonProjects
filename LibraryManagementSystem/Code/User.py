@@ -38,10 +38,12 @@ class Librarian(User):
         catalog.addBook(name,author,publish_date,pages)
     
     def removeBook(self,name):
-        pass
+        book_item=name
+        Book.removeBookItem(book_item)
     
     def removeBookItemFromCatalog(self,catalog,book,isbn):
-        pass
+        name = book
+        catalog.removeBookItem(name,isbn)
     
     
         

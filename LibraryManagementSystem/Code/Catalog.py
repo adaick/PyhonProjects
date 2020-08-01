@@ -24,7 +24,9 @@ class Catalog:
                 return book
     
     def searchByAuthor(self,author):
-        pass
+        for book in self.books:
+            if author.strip() == book.author:
+                return book
     
         
     def displayAllBooks(self):

@@ -35,7 +35,7 @@ class Librarian(User):
         return self.name + self.location + self.emp_id
     
     def addBook(self,catalog,name,author,publish_date,pages):
-        pass
+        catalog.addBook(name,author,publish_date,pages)
     
     def removeBook(self,name):
         pass

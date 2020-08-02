@@ -41,7 +41,7 @@ class Catalog:
         
         print ('Total Book Count',c)
 
-    #this function will remove th ebook item from catalog    
+    #this function will remove the book item from catalog    
     def removeBookItem(self,name,isbn):
         book = self.searchByName(name)
         book_item = book.searchBookItem(isbn)

@@ -27,6 +27,11 @@ class Member(User):
         return self.name + ' ' + self.location + ' ' + self.student_id
     
     #assume name is unique
+    #this function will display all available books in catalog
+    def displayAllBooks(self,catalog):
+        catalog.displayAllBooks()
+
+    #this function will issue the book to the member
     def issueBook(self,obj, name,days=10):
         m_name=self.name
         try:
@@ -41,6 +46,7 @@ class Member(User):
             print('{} Not available'.format(name))
     
     #assume name is unique
+    #this function will return the book to catalog
     def returnBook(self,obj,name):
         try:
             if name in self.issuedbook:
@@ -61,16 +67,24 @@ class Librarian(User):
         
     def __repr__(self):
         return self.name + self.location + self.emp_id
+
+    #this function will display all available books in catalog
+    def displayAllBooks(self,catalog):
+        catalog.displayAllBooks()
     
+    #this function will add new book to the catalog 
     def addBook(self,catalog,name,author,publish_date,pages):
         catalog.addBook(name,author,publish_date,pages)
 
+    #this function will add book item to the catalog 
     def addBookItem(self,catalog,book,isbn,rack):
         catalog.addBookItem(book,isbn, rack)
     
+    #this function will remove book from the catalog 
     def removeBook(self,book,name):
         book.removeBookItem(name)
     
+    #this function will remove book item from the catalog 
     def removeBookItemFromCatalog(self,catalog,book,isbn):
         name = book
         catalog.removeBookItem(name,isbn)
